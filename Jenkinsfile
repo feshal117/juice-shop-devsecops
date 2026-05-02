@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        sonarQube 'sonar-scanner'
-    }
-
     stages {
 
         stage('Clone Code') {
@@ -23,7 +19,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     sh '''
-                    sonar-scanner \
+                    /usr/bin/sonar-scanner \
                       -Dsonar.projectKey=juice-shop \
                       -Dsonar.sources=. \
                       -Dsonar.host.url=http://sonarqube:9000 \
