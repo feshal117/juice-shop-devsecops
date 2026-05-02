@@ -1,13 +1,10 @@
 pipeline {
     agent any
-
-    stages {
-
-        stage('Clone Code') {
-            steps {
-                git 'https://github.com/feshal117/juice-shop-devsecops.git'
-            }
-        }
+stage('Clone Code') {
+    steps {
+        git branch: 'main', url: 'https://github.com/feshal117/juice-shop-devsecops.git'
+    }
+}
 
         stage('Install Dependencies') {
             steps {
